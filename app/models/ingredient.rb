@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Ingredient < ApplicationRecord
-  belongs_to :recipe
-  validates :name, presence: true
-  validates :unit, presence: true
+has_many :recipes, through: :recipe_ingredients
+has_many :recipe_ingredients
 end
